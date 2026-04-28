@@ -34,7 +34,7 @@ async def download_and_extract(session, url, processed_data):
         return  
   
     async with sem:  
-        await asyncio.sleep(0.3)  # Rate limit maior para downloads  
+        await asyncio.sleep(3)  # Rate limit maior para downloads  
         try:  
             print(f"[DOWNLOAD] {url}")  
             async with session.get(url, timeout=30) as resp:  
