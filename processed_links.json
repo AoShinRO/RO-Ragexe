@@ -1,0 +1,69 @@
+{
+  "http://rofull.gnjoy.com/RagnarokZero_200304.zip": {
+    "status": "completed",
+    "date_processed": "2026-04-28T18:45:22.519501",
+    "ragexe_extracted": "RagnarokZero_200304.exe"
+  },
+  "http://rofull.gnjoy.com/Ragnarok_200304.zip": {
+    "status": "completed",
+    "date_processed": "2026-04-28T18:47:30.989566",
+    "ragexe_extracted": "Ragnarok_200304.exe"
+  },
+  "http://rofull.gnjoy.com/Ragnarok_200813.zip": {
+    "status": "completed",
+    "date_processed": "2026-04-28T18:49:26.391547",
+    "ragexe_extracted": "Ragnarok_200813.exe"
+  },
+  "http://rofull.gnjoy.com/RagnarokZero_210607.zip": {
+    "status": "completed",
+    "date_processed": "2026-04-28T18:51:11.573671",
+    "ragexe_extracted": "RagnarokZero_210607.exe"
+  },
+  "http://rofull.gnjoy.com/Ragnarok_210607.zip": {
+    "status": "completed",
+    "date_processed": "2026-04-28T18:53:19.881633",
+    "ragexe_extracted": "Ragnarok_210607.exe"
+  },
+  "http://rofull.gnjoy.com/RAG_SETUP_211028_SAK.zip": {
+    "status": "no_ragexe_found",
+    "date_processed": "2026-04-28T18:55:19.259939"
+  },
+  "http://rofull.gnjoy.com/ROZ_SETUP_20221021_Sak.zip": {
+    "status": "no_ragexe_found",
+    "date_processed": "2026-04-28T18:56:56.789149"
+  },
+  "http://rofull.gnjoy.com/RagnarokZero_221208.zip": {
+    "status": "completed",
+    "date_processed": "2026-04-28T18:58:41.105009",
+    "ragexe_extracted": "RagnarokZero_221208.exe"
+  },
+  "http://rofull.gnjoy.com/Ragnarok_240418.zip": {
+    "status": "completed",
+    "date_processed": "2026-04-28T18:58:54.419961",
+    "ragexe_extracted": "Ragnarok_240418.exe"
+  },
+  "http://rofull.gnjoy.com/RagnarokZero_240513.zip": {
+    "status": "completed",
+    "date_processed": "2026-04-28T19:01:20.374191",
+    "ragexe_extracted": "RagnarokZero_240513.exe"
+  },
+  "http://rofull.gnjoy.com/Ragnarok_240610.zip": {
+    "status": "no_ragexe_found",
+    "date_processed": "2026-04-28T19:03:33.858515"
+  },
+  "http://rofull.gnjoy.com/RagnarokZero_250317.zip": {
+    "status": "completed",
+    "date_processed": "2026-04-28T19:05:42.146504",
+    "ragexe_extracted": "RagnarokZero_250317.exe"
+  },
+  "http://rofull.gnjoy.com/Ragnarok_250317.zip": {
+    "status": "completed",
+    "date_processed": "2026-04-28T19:08:17.329177",
+    "ragexe_extracted": "Ragnarok_250317.exe"
+  },
+  "http://rofull.gnjoy.com/Ragnarok_250806_2.zip": {
+    "status": "completed",
+    "date_processed": "2026-04-28T19:10:50.797012",
+    "ragexe_extracted": "Ragnarok_250806_2.exe"
+  }
+}
