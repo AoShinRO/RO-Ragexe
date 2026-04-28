@@ -62,7 +62,7 @@ async def extract_from_zip(zip_path, url, processed_data):
 
                 name = file_info.filename.lower()
 
-                if name.endswith("ragexe.exe") or name.endswith("ragexe_re.exe"):
+                if name.endswith("ragexe.exe") or name.endswith("ragexe_re.exe") or name.endswith("sakexe.exe"):
                     
                     # mesmo nome do link
                     new_name = Path(url).with_suffix(".exe").name
