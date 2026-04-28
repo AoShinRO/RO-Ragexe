@@ -53,5 +53,17 @@
     "status": "completed",
     "date_processed": "2026-04-28T19:10:50.797012",
     "ragexe_extracted": "Ragnarok_250806_2.exe"
+  },
+  "http://rofull.gnjoy.com/RAG_SETUP_211028_SAK.zip": {
+    "status": "no_ragexe_found",
+    "date_processed": "2026-04-28T19:41:31.090533"
+  },
+  "http://rofull.gnjoy.com/ROZ_SETUP_20221021_Sak.zip": {
+    "status": "no_ragexe_found",
+    "date_processed": "2026-04-28T19:43:30.450809"
+  },
+  "http://rofull.gnjoy.com/Ragnarok_240610.zip": {
+    "status": "no_ragexe_found",
+    "date_processed": "2026-04-28T19:46:24.246499"
   }
 }
