@@ -6,7 +6,7 @@ import re
 from datetime import datetime  
 from pathlib import Path  
   
-SEM_MAX = 3  # Reduzido para downloads maiores  
+SEM_MAX = 1  # Reduzido para downloads maiores  
 sem = asyncio.Semaphore(SEM_MAX)  
   
 def load_processed_links():  
@@ -64,7 +64,7 @@ async def extract_from_zip(zip_path, url, processed_data):
         with zipfile.ZipFile(zip_path, 'r') as zip_ref:  
             # Procura por ragexe.exe em subdiretórios  
             for file_info in zip_ref.filelist:  
-                if file_info.filename.lower().endswith('ragexe.exe'):  
+                if file_info.filename.lower().endswith('.exe'):  
                     # Extrai e renomeia  
                     date_str = extract_date_from_url(url)  
                     new_name = f"{date_str}Ragexe.exe"  
