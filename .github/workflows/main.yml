@@ -1,0 +1,46 @@
+name: Extract Ragexe Files  
+  
+concurrency:  
+    group: ${{ github.repository }}-${{ github.workflow }}-${{ github.ref }}  
+    cancel-in-progress: true  
+  
+on:  
+    schedule:  
+        - cron: '0 2 1 * *'  # 2 horas após o update-links  
+    workflow_dispatch:  
+  
+permissions:  
+    contents: write  
+  
+jobs:  
+    extract-ragexe:  
+        name: Run Ragexe Extractor  
+        runs-on: ubuntu-latest  
+  
+        steps:  
+            - name: Checkout repository  
+              uses: actions/checkout@v4  
+  
+            - name: Setup Python  
+              uses: actions/setup-python@v5  
+              with:  
+                  python-version: '3.12'  
+  
+            - name: Install dependencies  
+              run: pip install -r requirements.txt  
+  
+            - name: Fetch valid links  
+              run: |  
+                curl -o links_validos.md \  
+                  https://raw.githubusercontent.com/AoShinRO/RO-Setup-Finder/main/links_validos.md  
+  
+            - name: Run Ragexe Extractor  
+              run: python3 ragexe_extractor.py  
+  
+            - name: Commit extracted files  
+              run: |  
+                  git config user.name "github-actions"  
+                  git config user.email "github-actions@users.noreply.github.com"  
+                  git add ragexe_files/ processed_links.json  
+                  git diff --cached --quiet || git commit -m "ragexe: auto update extracted files"  
+                  git push
