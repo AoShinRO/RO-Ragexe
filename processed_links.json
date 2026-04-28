@@ -24,14 +24,6 @@
     "date_processed": "2026-04-28T18:53:19.881633",
     "ragexe_extracted": "Ragnarok_210607.exe"
   },
-  "http://rofull.gnjoy.com/RAG_SETUP_211028_SAK.zip": {
-    "status": "no_ragexe_found",
-    "date_processed": "2026-04-28T18:55:19.259939"
-  },
-  "http://rofull.gnjoy.com/ROZ_SETUP_20221021_Sak.zip": {
-    "status": "no_ragexe_found",
-    "date_processed": "2026-04-28T18:56:56.789149"
-  },
   "http://rofull.gnjoy.com/RagnarokZero_221208.zip": {
     "status": "completed",
     "date_processed": "2026-04-28T18:58:41.105009",
@@ -46,10 +38,6 @@
     "status": "completed",
     "date_processed": "2026-04-28T19:01:20.374191",
     "ragexe_extracted": "RagnarokZero_240513.exe"
-  },
-  "http://rofull.gnjoy.com/Ragnarok_240610.zip": {
-    "status": "no_ragexe_found",
-    "date_processed": "2026-04-28T19:03:33.858515"
   },
   "http://rofull.gnjoy.com/RagnarokZero_250317.zip": {
     "status": "completed",
