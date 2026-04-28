@@ -32,8 +32,8 @@ jobs:
             - name: Fetch valid links  
               run: |  
                 curl -o links_validos.md \  
-                  https://raw.githubusercontent.com/AoShinRO/RO-Setup-Finder/main/links_validos.md  
-  
+                  https://raw.githubusercontent.com/AoShinRO/RO-Setup-Finder/refs/heads/main/links_validos.md
+                  
             - name: Run Ragexe Extractor  
               run: python3 ragexe_extractor.py  
   
