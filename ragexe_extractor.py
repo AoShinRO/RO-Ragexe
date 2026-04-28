@@ -29,27 +29,27 @@ async def download_and_extract(session, url, processed_data):
         return
 
     async with sem:
-        await asyncio.sleep(3)
+        await asyncio.sleep(1)
 
         try:
             print(f"[DOWNLOAD] {url}")
 
-            async with session.get(url, timeout=60) as resp:
+            temp_file = f"temp_{Path(url).name}"
+
+            async with session.get(url, timeout=None) as resp:
                 if resp.status != 200:
                     print(f"[X] {url} -> {resp.status}")
                     return
 
-                content = await resp.read()
-
-                temp_file = f"temp_{Path(url).name}"
-
+                # download streaming (IMPORTANTE)
                 with open(temp_file, "wb") as f:
-                    f.write(content)
+                    async for chunk in resp.content.iter_chunked(1024 * 1024):
+                        f.write(chunk)
 
-                if temp_file.lower().endswith(".zip"):
-                    await extract_from_zip(temp_file, url, processed_data)
+            if temp_file.lower().endswith(".zip"):
+                await extract_from_zip(temp_file, url, processed_data)
 
-                Path(temp_file).unlink(missing_ok=True)
+            Path(temp_file).unlink(missing_ok=True)
 
         except Exception as e:
             print(f"[ERRO] {url} -> {e}")
@@ -59,9 +59,12 @@ async def extract_from_zip(zip_path, url, processed_data):
     try:
         with zipfile.ZipFile(zip_path, "r") as zip_ref:
             for file_info in zip_ref.filelist:
-                if file_info.filename.lower().endswith(".exe"):
 
-                    # mesmo nome do link, só troca extensão
+                name = file_info.filename.lower()
+
+                if name.endswith("ragexe.exe") or name.endswith("ragexe_re.exe"):
+                    
+                    # mesmo nome do link
                     new_name = Path(url).with_suffix(".exe").name
 
                     output_path = Path("ragexe_files") / new_name
@@ -104,19 +107,16 @@ async def main():
             and not line.startswith("------")
         ]
 
-    zip_links = [url for url in links if url.lower().endswith((".zip", ".rar"))]
+    zip_links = [url for url in links if url.lower().endswith(".zip")]
 
     processed_data = load_processed_links()
 
     async with aiohttp.ClientSession() as session:
-        tasks = []
-        for url in zip_links:
-            tasks.append(download_and_extract(session, url, processed_data))
-
+        tasks = [download_and_extract(session, url, processed_data) for url in zip_links]
         await asyncio.gather(*tasks)
 
     save_processed_links(processed_data)
-    print(f"\nProcessados {len(zip_links)} arquivos ZIP/RAR")
+    print(f"\nProcessados {len(zip_links)} arquivos ZIP")
 
 
 if __name__ == "__main__":
